@@ -1,0 +1,79 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  flex-flow: column;
+}
+
+body {
+  background-color: #111827;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  color: #f15d9f;
+  margin-left: 0.3em;
+}
+
+.character-list {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  gap: 12px;
+}
+
+.character-list li {
+  display: flex;
+  flex-flow: column;
+
+  align-items: center;
+
+  height: 120px;
+  width: 100%;
+}
+
+.character-list li[aria-selected='true'] {
+  border: 2px solid green;
+}
+
+.character-list li img {
+  aspect-ratio: 1;
+  width: 100%;
+
+  object-fit: contain;
+
+  cursor: pointer;
+}
+
+.battlefield {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  max-width: 800px;
+  width: 100%;
+
+  padding: 16px;
+
+  margin: auto;
+}
+
+.battlefield-player {
+  display: flex;
+  flex-flow: column;
+}
+
+.battlefield-player img {
+  height: 200px;
+  object-fit: contain;
+}
+
+.battlefield-player:last-of-type img {
+  height: 100px;
+}
