@@ -32,6 +32,7 @@
     "start": "npx nullstack start",
     "build": "npx nullstack build",
     "preserve": "npx nullstack build",
-    "serve": "node ./.production/server.js"
+    "serve": "node ./.production/server.js",
+    "prod": "node ./.production/server.js"
   }
 }
