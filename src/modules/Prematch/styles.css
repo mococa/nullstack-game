@@ -1,0 +1,57 @@
+.prematch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.prematch > .column:first-of-type {
+  align-items: center;
+  justify-content: space-between;
+
+  margin: auto;
+
+  max-height: 500px;
+  max-width: 400px;
+  height: 100%;
+  width: 100%;
+}
+
+.prematch > .column:first-of-type button {
+  width: 100%;
+}
+
+.chat-container {
+  display: flex;
+  flex-flow: column;
+
+  justify-content: flex-end;
+
+  max-height: 500px;
+  height: 100%;
+  width: 100%;
+
+  margin: auto 0;
+}
+
+.character-selection {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.character-selection img {
+  width: 100%;
+  aspect-ratio: 1/1;
+
+  background-color: #efefef;
+
+  object-fit: cover;
+
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+
+.character-selection img[aria-selected='true'] {
+  outline: 3px solid;
+}

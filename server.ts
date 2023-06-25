@@ -12,11 +12,11 @@ import { setup_io_server } from 'utils/setup_io_server';
 const context = Nullstack.start(Application) as NullstackServerContext;
 
 const db_players = [
-  new Player({ id: '1', name: 'Player 1' }),
-  new Player({ id: '2', name: 'Player 2' }),
-  new Player({ id: '3', name: 'Player 3' }),
-  new Player({ id: '4', name: 'Player 4' }),
-  new Player({ id: '5', name: 'Player 5' }),
+  new Player({ id: '1', username: 'a', password: '123' }),
+  new Player({ id: '2', username: 'b', password: '123' }),
+  new Player({ id: '3', username: 'Player 3', password: '123' }),
+  new Player({ id: '4', username: 'Player 4', password: '123' }),
+  new Player({ id: '5', username: 'Player 5', password: '123' }),
 ];
 
 context.db = { players: db_players };

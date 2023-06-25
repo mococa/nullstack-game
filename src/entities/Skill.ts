@@ -13,6 +13,7 @@ interface Props {
   key: 'Q' | 'W' | 'E' | 'R';
   cost: Partial<Models.CharacterAttributes>;
   round_cool_down: number;
+  image: string;
 }
 
 export class Skill {
@@ -24,6 +25,7 @@ export class Skill {
   damage: number;
   heal: number;
   round_cool_down: number;
+  image: string;
 
   constructor({
     name,
@@ -33,6 +35,7 @@ export class Skill {
     cost,
     round_cool_down,
     value,
+    image,
   }: Props) {
     this.name = name;
     this.type = type;
@@ -40,6 +43,7 @@ export class Skill {
     this.key = key;
     this.cost = cost;
     this.round_cool_down = round_cool_down;
+    this.image = image;
 
     if (this.type === 'damage') {
       this.damage = (value.value || 0) * (value.multiplier || 1);

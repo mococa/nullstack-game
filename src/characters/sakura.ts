@@ -14,6 +14,7 @@ const sakura_skills = [
     value: {
       value: 10,
     },
+    image: '/skills/4.png',
   }),
 
   new Skill({
@@ -28,6 +29,7 @@ const sakura_skills = [
     value: {
       value: 10,
     },
+    image: '/skills/5.png',
   }),
 ];
 
@@ -39,4 +41,12 @@ export const sakura = new Character({
   id: 4,
   image: '/characters/sakura.png',
   type: 'warrior',
+  attributes: {
+    defense: 10,
+    health: 100,
+    mana: 100,
+    strength: 20,
+  },
+  max_health: 100,
+  max_mana: 100,
 });

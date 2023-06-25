@@ -15,6 +15,7 @@ const orochimaru_skills = [
       value: 10,
     },
     round_cool_down: 1,
+    image: '/skills/3.png',
   }),
 
   new Skill({
@@ -30,6 +31,7 @@ const orochimaru_skills = [
     },
     round_cool_down: 4,
     type: 'damage',
+    image: '/skills/4.png',
   }),
 ];
 
@@ -40,4 +42,12 @@ export const orochimaru = new Character({
   id: 3,
   image: '/characters/orochimaru.png',
   type: 'warrior',
+  attributes: {
+    defense: 10,
+    health: 100,
+    mana: 100,
+    strength: 20,
+  },
+  max_health: 100,
+  max_mana: 100,
 });
