@@ -6,74 +6,46 @@
   box-sizing: border-box;
 }
 
+html,
+body,
+main,
+#application {
+  height: 100%;
+}
+
 main {
   display: flex;
   flex-flow: column;
+
+  padding: 16px;
 }
 
 body {
-  background-color: #111827;
-  color: #fff;
-  font-family: 'Roboto', sans-serif;
+  color: #303030;
+  background-color: #fff;
+  font-family: 'Gemunu Libre', sans-serif;
 }
 
-a {
-  color: #f15d9f;
-  margin-left: 0.3em;
+h1 {
+  color: #303030;
+  font-size: 3rem;
+  font-weight: 700;
 }
 
-.character-list {
-  display: grid;
-  grid-template-columns: repeat(4, 100px);
-  gap: 12px;
+h2 {
+  font-size: 2.625rem;
+  font-weight: 400;
 }
 
-.character-list li {
-  display: flex;
-  flex-flow: column;
-
-  align-items: center;
-
-  height: 120px;
-  width: 100%;
-}
-
-.character-list li[aria-selected='true'] {
-  border: 2px solid green;
-}
-
-.character-list li img {
-  aspect-ratio: 1;
-  width: 100%;
-
-  object-fit: contain;
-
-  cursor: pointer;
-}
-
-.battlefield {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  max-width: 800px;
-  width: 100%;
-
-  padding: 16px;
-
-  margin: auto;
-}
-
-.battlefield-player {
+.column {
   display: flex;
   flex-flow: column;
 }
 
-.battlefield-player img {
-  height: 200px;
-  object-fit: contain;
+.gap-32 {
+  gap: 32px;
 }
 
-.battlefield-player:last-of-type img {
-  height: 100px;
+.gap-24 {
+  gap: 24px;
 }

@@ -14,6 +14,7 @@ const sasuke_skills: Skill[] = [
     value: {
       value: 10,
     },
+    image: '/skills/6.png',
   }),
 
   new Skill({
@@ -29,6 +30,7 @@ const sasuke_skills: Skill[] = [
       value: 10,
       multiplier: 2,
     },
+    image: '/skills/7.png',
   }),
 ];
 
@@ -39,4 +41,12 @@ export const sasuke = new Character({
   id: 2,
   image: '/characters/sasuke.png',
   type: 'shooter',
+  attributes: {
+    defense: 10,
+    health: 100,
+    mana: 100,
+    strength: 20,
+  },
+  max_health: 100,
+  max_mana: 100,
 });

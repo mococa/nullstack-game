@@ -1,9 +1,11 @@
-import Nullstack, { NullstackClientContext, NullstackNode } from 'nullstack';
+import Nullstack, { NullstackNode } from 'nullstack';
+
+import { Login } from '_modules/Authentication/Login';
+import { Lobby } from '_modules/Lobby';
+import { Prematch } from '_modules/Prematch';
+import { Match } from '_modules/Match';
 
 import './Application.css';
-import { HomePage } from '_pages/Home';
-import { LoginPage } from '_pages/Login';
-import { GamePage } from '_pages/Game';
 
 declare function Head(): NullstackNode;
 
@@ -11,9 +13,10 @@ class Application extends Nullstack {
   renderHead() {
     return (
       <head>
-        <link href="https://fonts.gstatic.com" rel="preconnect" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-          href="https://fonts.googleapis.com/css2?family=Crete+Round&family=Roboto&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
       </head>
@@ -25,11 +28,13 @@ class Application extends Nullstack {
       <body>
         <Head />
 
-        <LoginPage route="/" />
+        <Login route="/" />
 
-        <HomePage route="/home" />
+        <Lobby route="/lobby" />
 
-        <GamePage route="/game/:id" />
+        <Prematch route="/prematch" />
+
+        <Match route="/match" />
       </body>
     );
   }

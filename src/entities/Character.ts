@@ -8,6 +8,9 @@ interface Props {
   id: number;
   skills: Skill[];
   type: Models.CharacterType;
+  attributes: Models.CharacterAttributes;
+  max_health: number;
+  max_mana: number;
 }
 
 export class Character {
@@ -19,39 +22,29 @@ export class Character {
   type: Models.CharacterType;
   attributes: Models.CharacterAttributes;
 
-  constructor({ name, description, image, id, skills, type }: Props) {
+  max_health: number;
+  max_mana: number;
+
+  constructor({
+    name,
+    description,
+    image,
+    id,
+    skills,
+    type,
+    max_health,
+    max_mana,
+    attributes,
+  }: Props) {
     this.name = name;
     this.description = description;
     this.image = image;
     this.id = id;
     this.skills = skills;
     this.type = type;
-
-    switch (type) {
-      case 'warrior':
-        this.attributes = {
-          strength: 10,
-          health: 100,
-          defense: 5,
-          mana: 100,
-        };
-
-      case 'mage':
-        this.attributes = {
-          strength: 5,
-          health: 60,
-          defense: 5,
-          mana: 200,
-        };
-
-      case 'shooter':
-        this.attributes = {
-          strength: 5,
-          health: 100,
-          defense: 5,
-          mana: 100,
-        };
-    }
+    this.max_health = max_health;
+    this.max_mana = max_mana;
+    this.attributes = attributes;
   }
 
   CastSpell(skill: Skill, target: Character) {

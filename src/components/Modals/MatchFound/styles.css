@@ -1,0 +1,25 @@
+@property --percentage {
+  syntax: '<percentage>'; /* <- defined as type number for the transition to work */
+  initial-value: 100%;
+  inherits: false;
+}
+
+.timer {
+  width: 50px;
+  height: 50px;
+
+  background: conic-gradient(#a8a7a7 var(--percentage), 0, #d9d9d9);
+
+  animation: countdown 5s linear;
+
+  border-radius: 50%;
+}
+
+@keyframes countdown {
+  from {
+    --percentage: 0%;
+  }
+  to {
+    --percentage: 100%;
+  }
+}

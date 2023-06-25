@@ -1,7 +1,7 @@
-import * as Nullstack from 'nullstack';
 import { Player } from '_entities/Player';
 import { Match } from '_entities/Match';
 import { Server } from 'socket.io';
+import { Socket } from 'socket.io-client';
 
 declare module 'nullstack' {
   export interface BaseNullstackServerContext {
@@ -16,5 +16,7 @@ declare module 'nullstack' {
 
   export interface BaseNullstackClientContext {
     me: Player;
+    current_match: Match;
+    socket: Socket;
   }
 }

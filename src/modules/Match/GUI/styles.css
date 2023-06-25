@@ -1,0 +1,266 @@
+.gui-player-health {
+  display: flex;
+  gap: 8px;
+}
+
+.gui-player-health img {
+  height: 60px;
+  width: 60px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+}
+
+.health-bar {
+  position: relative;
+
+  display: flex;
+
+  width: 249px;
+}
+
+.health-bar .health-main-container {
+  display: flex;
+  flex-flow: column;
+
+  width: 100%;
+
+  padding: 4px;
+
+  background: rgba(0, 0, 0, 0.6);
+
+  --container-clip-path: polygon(
+    calc(100% - 27px) 0,
+    calc(100% - 55px) 44.5px,
+    calc(50% + 5px) 44.5px,
+    calc(50% + 5px) 100%,
+    0 100%,
+    0 0
+  );
+
+  -webkit-clip-path: var(--container-clip-path);
+  clip-path: var(--container-clip-path);
+}
+
+.health-bar .health-main-container .character-name {
+  color: #fff;
+}
+
+.health-bar .health-main-container .health-bar--outline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  --clip-path: polygon(
+    79% 20.55px,
+    122.5px 20.55px,
+    113.5px 35px,
+    0 35px,
+    0 0,
+    84% 0
+  );
+
+  width: 100%;
+  height: 34px;
+
+  background: #fff;
+
+  -webkit-clip-path: var(--clip-path);
+  clip-path: var(--clip-path);
+}
+
+.health-bar .health-main-container .health-bar--outline .health-bar--border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 99%;
+  height: 32px;
+
+  background: rgba(0, 0, 0, 0.6);
+
+  --border-clip-path: polygon(
+    79% 18px,
+    120px 18px,
+    110px 35px,
+    0 35px,
+    0 0,
+    84% 0
+  );
+
+  -webkit-clip-path: var(--border-clip-path);
+  clip-path: var(--border-clip-path);
+}
+
+.health-bar
+  .health-main-container
+  .health-bar--outline
+  .health-bar--border
+  .health-bar--background {
+  width: calc(100% - 6px);
+  height: 28px;
+
+  background: #fff;
+
+  --background-clip-path: polygon(
+    79% 14px,
+    116.5px 14px,
+    103.5px 35px,
+    0 35px,
+    0 0,
+    83% 0
+  );
+
+  -webkit-clip-path: var(--background-clip-path);
+  clip-path: var(--background-clip-path);
+}
+
+.health-bar
+  .health-main-container
+  .health-bar--outline
+  .health-bar--border
+  .health-bar--background
+  .health-bar--health {
+  --health: 1;
+  --max-health: 1;
+
+  width: calc(var(--health) / var(--max-health) * 100%);
+  height: 28px;
+
+  background: linear-gradient(to right, #71af1b 0%, #f7c516 50%, #f44336 100%);
+
+  -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, calc(100% - 18px) 100%);
+  clip-path: polygon(100% 0, 0 0, 0 100%, calc(100% - 18px) 100%);
+}
+
+.health-bar .mana-indicator {
+  --health: '0';
+  --max-health: '0';
+
+  position: absolute;
+  bottom: -9px;
+  right: 55px;
+  left: 50%;
+
+  height: 26px;
+
+  padding: 0 6px;
+
+  background: rgb(50 149 207);
+
+  border-radius: 3px 0 0 3px;
+
+  color: #fff;
+  font-size: 0.75rem;
+  line-height: 26px;
+  text-align: left;
+}
+
+.health-bar .mana-indicator:before {
+  content: var(--mana);
+  margin-right: 5px;
+}
+
+.health-bar .mana-indicator:after {
+  content: var(--max-mana);
+  margin-left: 5px;
+}
+
+.gui-player-health:not(:first-of-type) {
+  flex-flow: row-reverse;
+}
+
+.gui-player-health:not(:first-of-type) .character-name {
+  text-align: end;
+}
+
+.gui-player-health:not(:first-of-type) .health-main-container {
+  --container-clip-path: polygon(
+    calc(50% - 8px) 46.5px,
+    calc(50% - 8px) 100%,
+    100% 100%,
+    100% 0,
+    28px 0px,
+    56px 46.5px
+  );
+}
+
+.gui-player-health:not(:first-of-type) .mana-indicator {
+  right: 50%;
+  left: 55px;
+
+  text-align: right;
+}
+
+.gui-player-health:not(:first-of-type) .health-bar--outline {
+  transform: scaleX(-1);
+}
+
+/********
+* Basic actions
+**********/
+.gui-basic-actions {
+  display: flex;
+  flex: 1;
+  gap: 16px;
+}
+
+.gui-basic-actions button {
+  padding: 8px;
+
+  font-size: 1.125rem;
+
+  height: fit-content;
+
+  flex: 1;
+}
+
+.gui-basic-actions + .chat {
+  flex: 1;
+}
+
+/********
+* Skills
+**********/
+.gui-skills {
+  display: flex;
+  gap: 8px;
+
+  margin-bottom: 8px;
+}
+
+.skill-tooltip-container {
+  position: relative;
+}
+
+.skill-tooltip-container:active .skill-tooltip {
+  display: block;
+}
+
+.skill-tooltip {
+  display: none;
+
+  position: absolute;
+  bottom: calc(100% + 4px);
+
+  background-color: rgba(0, 0, 0, 0.75);
+
+  color: white;
+
+  padding: 6px;
+
+  border-radius: 3px;
+
+  width: 200px;
+}
+
+.skill-tooltip header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill-tooltip img {
+  user-select: none;
+  pointer-events: none;
+}

@@ -15,6 +15,7 @@ const naruto_skills = [
       value: 10,
     },
     round_cool_down: 1,
+    image: '/skills/1.png',
   }),
 
   new Skill({
@@ -30,6 +31,7 @@ const naruto_skills = [
     },
     round_cool_down: 3,
     type: 'heal',
+    image: '/skills/2.png',
   }),
 ];
 
@@ -41,4 +43,12 @@ export const naruto = new Character({
   id: 1,
   image: '/characters/naruto.png',
   type: 'warrior',
+  attributes: {
+    defense: 10,
+    health: 100,
+    mana: 100,
+    strength: 20,
+  },
+  max_health: 100,
+  max_mana: 100,
 });

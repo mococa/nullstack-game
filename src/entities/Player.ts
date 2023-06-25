@@ -3,19 +3,21 @@ import { Character } from './Character';
 
 interface Props {
   id: string;
-  name: string;
+  username: string;
+  password: string;
 }
 
 export class Player {
   id: string;
   email: string;
-  name: string;
-  // characters: Character[];
+  username: string;
+  password: string;
   selected_character: Character;
-  socket: Socket;
+  // socket: Socket;
 
-  constructor({ id, name }: Props) {
+  constructor({ id, username, password }: Props) {
     this.id = id;
-    this.name = name;
+    this.username = username;
+    this.password = password;
   }
 }
